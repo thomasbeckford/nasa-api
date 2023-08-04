@@ -22,6 +22,9 @@ NEXT_PUBLIC_NASA_API_KEY=""
 
 You need to set this ENV to make the project work.
 
+## How to generate an API_KEY ?
+Go to https://api.nasa.gov/ and fill out the form, you will receive the API_KEY on your email.
+
 ## Custom Hooks
 
 The project utilizes custom hooks for certain functionalities. One notable custom hook is used to fetch photos from the NASA API. The hook encapsulates the logic for making API requests and handling the response.
