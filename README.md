@@ -1,4 +1,4 @@
-# Southern Code Challenge
+# NASA API
 
 This is a web application built using React, Next.js v13, and Context API for state management. It allows users to search photos using the NASA API. The application is designed to be responsive and follows good practices of clean code and design patterns. It utilizes custom hooks for managing certain functionalities.
 
