@@ -48,7 +48,9 @@ pnpm run test
 
 ## Make the project better (todos)
 
-- Hide or show smaller saved searches section (button)
+- Make a better UI/UX
+  - Hide or show smaller saved searches section (button)
+  - Let me see saved searches on mobile
 - Create more tests!
 - Create dynamic loading for images (scroll down)
   
