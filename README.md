@@ -41,3 +41,10 @@ pnpm run test
 - Axios https://axios-http.com/
 - Nextjs 13 app directory https://nextjs.org/
 - NASA API https://api.nasa.gov/
+
+## Make the project better (todos)
+
+- Hide or show smaller saved searches section (button)
+- Create more tests!
+- Create dynamic loading for images (scroll down)
+  
