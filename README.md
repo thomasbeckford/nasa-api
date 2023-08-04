@@ -2,7 +2,8 @@
 
 This is a web application built using React, Next.js v13, and Context API for state management. It allows users to search photos using the NASA API. The application is designed to be responsive and follows good practices of clean code and design patterns. It utilizes custom hooks for managing certain functionalities.
 
-![nasa-api-image](https://github.com/thomasbeckford/nasa-api/assets/28713861/c84ceedf-429c-4f26-9882-c487fdbf7e6e)
+![Screenshot 2023-08-03 at 11 13 51 PM](https://github.com/thomasbeckford/nasa-api/assets/28713861/f71c76cb-8b78-491e-9ef2-09056ba67e42)
+
 
 ## Getting Started
 
