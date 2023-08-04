@@ -24,10 +24,8 @@ export default function SearchHistory() {
 
   const colorFromIdHsla = (id: number) => {
     const hue = id * 137.508
-    return `hsla(${hue}, 50%, 75%, 1)`
+    return `hsla(${hue}, 30%, 35%, 1)`
   }
-
-  console.log('searchHistory', searchHistory)
 
   return (
     <Box>
@@ -57,14 +55,24 @@ export default function SearchHistory() {
             borderRadius="lg"
             cursor="pointer"
             borderWidth={2}
-            bg={
+            fontWeight={
               selectedSearchHistoryItem && selectedSearchHistoryItem === search
-                ? 'gray.500'
-                : 'gray.700'
+                ? 'bold'
+                : 'normal'
+            }
+            color={
+              selectedSearchHistoryItem && selectedSearchHistoryItem === search
+                ? 'gray.100'
+                : 'gray.200'
             }
             borderColor={
               selectedSearchHistoryItem && selectedSearchHistoryItem === search
-                ? 'white'
+                ? 'gray.500'
+                : 'gray.200'
+            }
+            bg={
+              selectedSearchHistoryItem && selectedSearchHistoryItem === search
+                ? 'gray.500'
                 : colorFromIdHsla(index)
             }
             py={1}

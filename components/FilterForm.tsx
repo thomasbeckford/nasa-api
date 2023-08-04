@@ -15,12 +15,14 @@ import {
 import { useContext } from 'react'
 import { SearchContext } from '@/context/SearchContext'
 import { FormDataType, SearchValuesType } from '@/types'
+import { useMediaQuery } from '@chakra-ui/react'
 
 type FilterFormProps = {
   onSubmit: (data: FormDataType) => void
 }
 
 export default function FilterForm(props: FilterFormProps) {
+  const [isMobile] = useMediaQuery('(max-width: 768px)')
   const { onSubmit } = props
   const { register, handleSubmit, reset, getValues } =
     useFormContext<FormDataType>()
@@ -120,7 +122,7 @@ export default function FilterForm(props: FilterFormProps) {
           </Flex>
 
           <Flex justify="right" w="full" gap={5}>
-            {selectedSearchHistoryItem && (
+            {selectedSearchHistoryItem && !isMobile ? (
               <Button
                 variant="outline"
                 colorScheme="red"
@@ -128,7 +130,7 @@ export default function FilterForm(props: FilterFormProps) {
               >
                 Delete selected search
               </Button>
-            )}
+            ) : null}
             <Button
               variant="outline"
               colorScheme="green"

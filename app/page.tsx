@@ -6,13 +6,20 @@ import Image from 'next/image'
 import FilterForm from '../components/FilterForm'
 import { useForm, FormProvider } from 'react-hook-form'
 import usePhotos from '../hooks/usePhotos'
-import { Box, Flex, SimpleGrid, Grid, GridItem } from '@chakra-ui/react'
+import {
+  Box,
+  Flex,
+  SimpleGrid,
+  Grid,
+  GridItem,
+  useMediaQuery,
+} from '@chakra-ui/react'
 import SearchHistory from '../components/SearchHistory'
 import { Rover } from '@/enums'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<number>(1)
-
+  const [isMobile] = useMediaQuery('(max-width: 768px)')
   const methods = useForm({
     defaultValues: {
       rover: Rover.Curiosity,
@@ -45,16 +52,26 @@ export default function Home() {
     <main>
       <Box bg="gray.800" w="full" h="100vh">
         <Grid
-          templateAreas={`"saved filter"
-                          "saved content"`}
+          templateAreas={
+            !isMobile
+              ? `"saved filter"
+                 "saved content"`
+              : `"filter"
+                 "content"`
+          }
           templateRows={['100vh', '0fr']}
-          templateColumns={['1fr', '20vw 1fr']}
+          templateColumns={!isMobile ? ['1fr', '20vw 1fr'] : ['1fr']}
           gap={4}
           p={5}
           height="100vh"
         >
           <FormProvider {...methods}>
-            <GridItem bg="gray.700" borderRadius="lg" area="saved">
+            <GridItem
+              bg="gray.700"
+              borderRadius="lg"
+              area="saved"
+              display={!isMobile ? 'block' : 'none'}
+            >
               <SearchHistory />
             </GridItem>
             <GridItem bg="gray.700" borderRadius="lg" area="filter">
@@ -67,7 +84,7 @@ export default function Home() {
             area="content"
             overflowY="auto"
           >
-            <Box textAlign="center" py={5}>
+            <Box textAlign="center" py={[0, 0, 0, 5]}>
               {loading ? (
                 <p>Loading images...</p>
               ) : error ? (

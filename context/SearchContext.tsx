@@ -25,7 +25,6 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
     const itemExists = searchHistory.some(
       (i) => JSON.stringify(i) === JSON.stringify(item)
     )
-    console.log('itemExists', itemExists)
 
     if (!itemExists) {
       setSearchHistory((prev) => [...prev, item])
@@ -49,8 +48,6 @@ export function SearchProvider({ children }: { children: React.ReactNode }) {
       })
       return
     } else {
-      console.log('Deleting', itemExists)
-
       const filterSearchHistoryByItemId = searchHistory.filter(
         (i) => i.id !== itemExists
       )

@@ -17,8 +17,6 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPhotos,
   onPageChange,
 }) => {
-  console.log('itemsPerPage', itemsPerPage)
-
   const totalPages =
     totalItems < itemsPerPage ? 1 : Math.ceil(totalPhotos / itemsPerPage)
 
